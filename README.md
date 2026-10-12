@@ -48,9 +48,9 @@ App **Edit** controls change existing widget appearance/name without resetting i
 
 1. Create a public [GitHub](https://github.com) repository. Standard GitHub-hosted Actions runners are [free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions). Private repositories have plan allowances.
 2. Extract the source ZIP and upload the **contents** of its `PIXLO` directory. `app`, `gradle`, `settings.gradle.kts` and `.github` must be at the repository root. Include `.github/workflows/android.yml`, `.gitignore`, and the wrapper JAR. An empty repository may show an **upload existing file** link instead of **Add file → Upload files**.
-3. The commit starts **Actions → Build PIXLO APK**. It runs eight JVM tests, lint, app compilation and device-test APK compilation. After success, download **PIXLO-debug-APK** from that run and extract `app-debug.apk`.
+3. The commit starts **Actions → Build PIXLO APK**. It runs 12 JVM tests, lint, app compilation and device-test APK compilation. After success, download **PIXLO-debug-APK** from that run and extract `app-debug.apk`.
 4. Edit files with the pencil or press `.` to open GitHub's browser editor. Commit to rebuild. You do not need Codespaces.
-5. Optional: **Run workflow → device_tests** runs the four Android bitmap tests in a cloud emulator. This checks rendering code, not a physical launcher's integration.
+5. Optional: **Run workflow → device_tests** runs Android rendering and widget-state persistence tests in a cloud emulator. Physical launcher integration still needs phone checks.
 
 Artifacts require signing in and expire after 14 days. Separate cloud builds may use different temporary debug signing keys; a signature mismatch means uninstall/reinstall. This is a debug app for personal sideload testing, not a Play Store release.
 
@@ -77,6 +77,6 @@ Java 17, Gradle 8.9, AGP 8.7.3, Kotlin/Compose 2.0.21, Android SDK/build-tools 3
 
 `MainActivity.kt`: UI; `PhotoStore.kt`: imports/settings; `PhotoFilters.kt`: filters; `WallpaperArt.kt`: dots/quote composition; `SubjectDetection.kt`: on-device subject boxes; `InternetQuotes.kt`: online cache/attribution; `PixloWallpaperService.kt`: visibility-aware drawing/transitions; `DailyRules.kt`: testable date/streak rules; `StreakWidgets.kt` and `WidgetConfigActivity.kt`: multiple widgets; `DailyRefresh.kt`: background refresh.
 
-See `VALIDATION.md` for actual build results and limits. The GitHub workflow has been provided, not published or dispatched on your account.
+See [VALIDATION.md](VALIDATION.md) for actual local build results and limits. The build workflow is published in this repository; check the Actions tab for each cloud run's status.
 
 Sources: [ML Kit object detection](https://developers.google.com/ml-kit/vision/object-detection/android), [Android widget pinning](https://developer.android.com/develop/ui/views/appwidgets/discoverability), [Commons API](https://commons.wikimedia.org/wiki/Commons:API/MediaWiki).
