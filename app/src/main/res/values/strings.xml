@@ -1,0 +1,7 @@
+<resources>
+    <string name="wallpaper_description">Photo effects, daily quotes and year dots.</string>
+    <string name="streak_description">One tap per day. Each widget has its own streak.</string>
+    <string name="widget_default_name">My streak</string>
+    <string name="widget_default_count">🔥 0</string>
+    <string name="widget_default_status">Tap to start</string>
+</resources>

@@ -1,0 +1,5 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/widget_background">
+    <TextView android:id="@+id/habit_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:maxLines="1" android:ellipsize="end" android:text="@string/widget_default_name" android:textSize="17sp" android:textStyle="bold" android:textColor="#FFFFFF" />
+    <TextView android:id="@+id/streak_count" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="@string/widget_default_count" android:textSize="34sp" android:textColor="#B9F56B" />
+    <TextView android:id="@+id/streak_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:maxLines="2" android:text="@string/widget_default_status" android:textSize="12sp" android:textColor="#D9DFE8" />
+</LinearLayout>
